@@ -5,9 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../src/output.css" rel="stylesheet">
 </head>
-<body>
-  <h1 class="text-3xl text-blue-800 font-bold underline">
-    Hello world!
-  </h1>
+<body class="bg-gray-200">
+  <header class="bg-indigo-900 text-center p-10">
+     <a href="./index.html" class="font-black text-orange-500 text-2xl">AestheticLearns</a>
+     <p class="text-gray-300 text-sm mt-2 font-semibold">Free education for everyone</p>
+  </header>
+
+  <main class="m-10 flex">
+    <div class="bg-white p-5 rounded flex-1 mr-5 shadow">
+      <h3 class="text-sm font-semibold">Get Free Internship @ CyberDude</h3>
+      <p class="text-xs text-gray-600 mt-1">Get yourself skilled by joining AestheticLearns internship</p>
+
+      <form action="" class="my-5" id="registrationForm">
+        <div class="grid grid-cols-2 gap-x-5 gap-y-4">
+          <div class="text-xs w-full">
+            <label for="fullName" class="block text-gray-800">Full name</label>
+            <input type="text" name="fullName" placeholder="Full name" id="fullName" class="input" required>
+          </div>
+          <div class="text-xs">
+            <label for="gender" class="block text-gray-800">Gender</label>
+            <div class="mt-2 space-x-2 text-xs">
+              <label for="male"><input type="radio" id="male" name="gender" value="Male" required>Male</label>
+              <label for="female"><input type="radio" id="female" name="gender" value="female" required>Female</label>
+              <label for="others"><input type="radio" id="others" name="gender" value="others" required>Others</label>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-x-4">
+            <div class="text-xs w-full">
+              <label for="email" class="block text-gray-800">Email Address</label>
+              <input type="email" name="email" placeholder="you@gmail.com" id="email" class="input" required/>
+            </div>
+            <div class="text-xs w-full">
+              <label for="mobile" class="block text-gray-800">Phone Number</label>
+              <input type="number" name="mobile" placeholder="Mobile Phone" id="mobile" class="input" required/>
+            </div>
+            </div>
+            <div class="text-xs w-full">
+              <label for="dob" class="block text-gray-800">Date of Birth</label>
+              <input type="date" name="dob" placeholder="D.O.B" id="dob" class="input" required/>
+            </div>
+            <div class="text-xs w-full">
+              <label for="skillKnown" class="block text-gray-800">What skill do you known already?</label>
+              <input type="text" name="skillKnown" placeholder="Skills separated by ; " id="skillKnown" class="input" required/>
+            </div>
+            <div class="text-xs w-full">
+              <label for="experience" class="block text-gray-800">Experience?</label>
+              <select name="experience" id="experience" class="input" required>
+                <option value="0.6">Select Experience</option>
+                <option value="2">less than 6 months</option>
+                <option value="3">less than 2 Years</option>
+                <option value="5">less than 5 Years</option>
+              </select>
+            </div>
+            <div class="text-xs w-full">
+              <label for="career_changed" class="block text-gray-800">Did AestheticLearns change your career?</label>
+              <textarea name="career_changed" id="career_changed" placeholder="Explain briefly in 250 words." rows="3" class="input resize-none"></textarea>
+            </div>
+            <div class="text-xs w-full">
+              <label for="course_completions" class="block text-gray-800">Have you attend any course completions?</label>
+              <textarea name="course_completions" id="course_completions" placeholder="If any, describe briefly." rows="3" class="input resize-none"></textarea>
+            </div>
+            <div class="text-xs w-full">
+              <label for="studies" class="block text-gray-800">Studies and Years of graduation</label>
+              <input type="text" name="studies" placeholder="B.E, 2020" id="studies" class="input" required/>
+            </div>
+            <div></div>
+            <div class="text-xs w-full">
+              <label for="linkedin" class="block text-gray-800">LinkedIn Profile</label>
+              <input type="url" name="linkedin" placeholder="LinkedIn URL" id="linkedin" class="input" required/>
+            </div>
+            <div class="text-xs w-full">
+              <label for="github" class="block text-gray-800">Github Profile</label>
+              <input type="url" name="github" placeholder="Github URL" id="github" class="input" required/>
+            </div>
+            <div class="text-xs w-full col-span-2">
+              <label for="reason" class="block text-gray-800">Why you need to join this internship</label>
+              <textarea name="reason" id="reason" placeholder="Explain briefly in 250 words." class="input resize-none" rows="10" required></textarea>
+            </div>
+            <div class="col-span-2">
+              <label for="terms" class="flex text-xs">
+                <input type="checkbox" id="terms" name="terms" required>
+                <span class="ml-2 select-none">I accept the <a href="#termsContent" class="text-orange-600">terms and conditions</a> mentioned there.</span>
+              </label>
+              <label for="requirement_terms" class="flex text-xs">
+                <input type="checkbox" id="requirement_terms" name="requirement_terms" required>
+                <span class="ml-2 select-none">I accept I need the following requirements to proceed this internship.</span>
+              </label>
+            </div>
+            <div class="col-span-2">
+              <button class="px-4 py-1 bg-orange-600 text-sm text-white rounded">Apply</button>
+            </div>
+          </div>
+      </form>
+    </div>
+
+    <div class="bg-white p-5 rounded w-96 h-fit" id="termsContent">
+      <h3 class="text-sm font-semibold">Terms and Conditions</h3>
+      <p class="text-xs mt-2"> This program is only for people who need it badly. If you can afford education, please look at the
+                private training insitutitions which offers the same education. <br> <br>
+                We can understand money is essential but we wanted to make sure that, this program doesn’t offers you
+                any stipend. Its purely skill oriented.
+                This program is more than learning. you will learn leadership, communication, workmanship etc.
+
+                Take a outh that, if you learn something here, share it with the other.
+      <ul class="text-xs list-disc p-5 space-y-2" id="conditions"></ul>
+      </p>
+    </div>
+  </main>
+
+  <section class="bg-white max-w-xl mx-auto p-10 m-10 rounded hidden" id="formSubmitted">
+    <div class="flex space-x-4">
+      <div class="text-4xl">😊</div>
+      <div class="">
+        <h1 class="font-xl font-semibold">Thank you. We received your application.</h1>
+        <p class="text-sm text-gray-600">Your application has been successfully registered.</p>
+        <button class="px-4 py-1 rounded bg-blue-500 text-xs my-2">Share</button>
+      </div>
+    </div>
+  </section>
 </body>
+  <script src="./js/main.js"></script>
 </html>

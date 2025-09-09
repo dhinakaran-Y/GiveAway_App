@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+body {
+    font-family: 'Inter' , sans-serif;
+}
+
+.input {
+    @apply px-3 bg-gray-200 rounded py-2 mt-1 w-full outline-none;
+}
