@@ -3,21 +3,33 @@ const successfulUIEl = document.getElementById('formSubmitted')
 const formEl = document.querySelector('form')
 
 
+const validateForm = () => {
+    const formInputEL = document.querySelectorAll('input , select , textarea')
+    let isFormDirty = true
+
+    formInputEL.forEach((field) => {
+         if(!field.hasAttribute('required')){
+                field.required = true;
+                isFormDirty = false;
+         }
+    })
+
+    return isFormDirty
+}
+
 const submitForm = (e) => {
     e.preventDefault();
-    
-    const formData = new FormData(formEl);
-    
-    //console.log([...formData.entries()]);
-    //console.log([...formData.values()]);
+ 
+    //do Validation here
+    if(validateForm()) {
+      const formData = new FormData(formEl);
+      // add data to firebase
+      const recordObj = Object.fromEntries(formData);
+      createRecord(recordObj);
 
-    // add data to firebase
-    const recordObj = Object.fromEntries(formData);
-    //console.log(recordObj);
-    createRecord(recordObj);
-    
-    //Update UI logic
-     updateUI()
+      //Update UI logic
+      updateUI()
+    }
 }
 
 const updateUI = () => {
