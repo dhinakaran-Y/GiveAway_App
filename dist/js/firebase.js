@@ -10,6 +10,7 @@
 
   const app = firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
+  const auth = firebase.auth();
 
   // const person = {
   //   name : 'Dhina',
@@ -28,4 +29,23 @@
         console.error("Error adding document: ", error);
       });
 
+  }
+
+  const loginUser = (email , password) => {
+    return new Promise((resolve , reject) => {
+      auth
+        .signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Signed in
+          var user = userCredential.user;
+
+          resolve(user)
+        })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+
+          reject({errorCode, errorMessage })
+        });
+    })
   }
