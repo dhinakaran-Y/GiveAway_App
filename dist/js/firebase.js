@@ -8,6 +8,8 @@
     measurementId: "G-SPSL5V1DM4"
   };
 
+  const COLLECTION_NAME ='requests'
+
   const app = firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
   const auth = firebase.auth();
@@ -20,7 +22,7 @@
 
   const createRecord = (record) => {
     return db
-      .collection("Feedback")
+      .collection(COLLECTION_NAME)
       .add(record)
       .then((docRef) => {
         console.log("Document written with ID: ", docRef.id);
@@ -49,3 +51,25 @@
         });
     })
   }
+
+
+  const getAllRequest = () => {
+    return new Promise((resolve , reject) => {
+      const result = db
+        .collection(COLLECTION_NAME)
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            return doc.data();
+          });
+          resolve(result)
+        })
+        .catch((e) => {
+          console.log('error in getting.',e);
+          reject(e)
+        })
+    })
+  }
+  

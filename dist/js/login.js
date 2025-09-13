@@ -9,7 +9,7 @@ const checkIfUserLoggedIn = () => {
         window.location.replace('./dashboard.html')
     }
 }
-checkIfUserLoggedIn();
+//checkIfUserLoggedIn();
 
 const handleLoginForm = (e) => {
     e.preventDefault()
